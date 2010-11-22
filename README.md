@@ -7,7 +7,7 @@ Chatstorm is an online brainstorming web application that uses a real-time chat 
 To run Chatstorm you need:
 
 * Node.js
-* NPN (Node Package Manager)
+* NPM (Node Package Manager)
 * Socket.io
 
 ## Credits
