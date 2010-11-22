@@ -1,0 +1,219 @@
+body{
+	color: #333;
+	font-family: 'Droid Sans', arial, serif;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: normal;
+	background: #022330 url("/clouds-01.jpeg") top left no-repeat;
+}
+
+#container{
+	width: 1000px;
+	position: absolute;
+	left: 50%;
+	margin: 20px 0px 0px -500px;
+}
+
+#header{
+	width: 900px;
+	height: 80px;
+	position: relative;
+}
+
+#logo{
+	position: relative;
+	float: left;
+	font-family: 'Lobster', arial, serif;
+	font-size: 60px;
+}
+
+#menu{
+	position: relative;
+	float: left;
+	font-size: 15px;
+	padding-left: 40px;
+	padding-top: 17px;
+}
+
+#tema{
+	width: 681px; 
+	padding: 5px; 
+	background: #adccd9; 
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-left: 2px solid #e1e1e1;
+	border-right: 2px solid #e1e1e1;
+	border-top: 2px solid #e1e1e1;
+	//border: 2px solid #e1e1e1;
+	//border-radius: 8px;
+	margin-top: 13px;
+	font-size: 14px;
+}
+
+#options{
+	margin: 20px 0px;
+}
+
+#footer{
+	position: relative;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#content{
+	position: relative;
+	width: 1000px;
+	//margin-top: 5px;
+}
+
+/* Live Search Area*/
+#live_searchs{
+	position: relative;
+	width: 290px;
+	height: 418px;
+	float:right;
+	overflow: auto;
+	border: 2px solid #e1e1e1;
+	border-radius: 8px;
+	background-color: #adccd9;
+}
+
+.boxes{
+	width: 290;
+	position: relative;
+	overflow: hidden;
+	border-bottom: 2px solid #e1e1e1;
+	padding: 5px 0px 5px 0px;
+}
+
+.boxes_header{
+	height: 10px;
+	//background:url("/box_top.jpg") top left no-repeat;
+}
+
+.boxes_content{
+	padding: 5px 15px 0px 5px;
+	//background:url("/box_middle.jpg") top left repeat-y;
+}
+
+.boxes_bottom{
+	height: 30px;
+	//background:url("/box_bottom.jpg") top left no-repeat;
+	border-bottom: 2px solid #e1e1e1;
+}
+
+.boxes_content_img{
+	width: 300px;
+	position: relative;
+	//background:url("/box_middle.jpg") top left repeat-y;
+	padding: 5px 0px 5px 0px;
+	max-height: 150px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.boxes_content_img img{
+	height: 140px;
+}
+
+/* CHAT AREA */
+#chatbox{
+	position: relative;
+	width: 685px;
+	float:left;
+}
+
+#chat { 
+	height: 414px; 
+	overflow: auto;
+	width: 685px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-left: 2px solid #e1e1e1;
+	border-right: 2px solid #e1e1e1;
+	border-bottom: 2px solid #e1e1e1;
+	padding: 3px;
+	background: #fff url("/chat_background.jpg") top left no-repeat;
+}
+
+#form {
+	width: 700px;
+	display: none; 
+}
+
+
+#form input[type=text] { 
+	width: 629px; 
+	padding: 5px; 
+	background: #fff; 
+	border: 2px solid #e1e1e1;
+	border-radius: 8px;
+}
+
+#form input[type=submit] { 
+	cursor: pointer; 
+	background: #adccd9; 
+	border: none; 
+	padding: 6px 8px; 
+	border-radius: 8px;
+	margin-left: 5px; 
+	color: #333;
+	border: 2px solid #e1e1e1;
+}
+
+#form input[type=submit]:hover {
+	background: #A2A2A2;
+}
+
+#form input[type=submit]:active {
+	position: relative;
+	top: 2px;
+}
+
+.row {
+	width: 100%;
+	display: -moz-box;
+	display: -webkit-box;
+	-moz-box-orient: horizontal;
+	-webkit-box-orient: horizontal;
+}
+
+.idea, .my_idea {
+	font-size: 17px;
+	margin: 2px;
+	padding: 10px;
+	border-radius: 4px;
+	color: #333;
+	background: #F5EE83 url("/corner.png") bottom right no-repeat;
+	-webkit-box-shadow: 3px 3px 0 #e9e9e9;
+}
+
+.my_idea {
+	background: orange url("/corner.png") bottom right no-repeat;
+}
+
+.close{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 8px;
+	height: 8px;
+	background: url("/corner.png") bottom right no-repeat;
+}
+
+.flexible {
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+}
+
+#chars_left{
+	color: #fff;
+}
+
+#details{
+	cursor: pointer;
+	position: relative;
+	font-size: 10px; 
+	line-height: 15px;
+	padding-left: 3px;
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ChatStorm</title>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans&subset=latin' rel='stylesheet' type='text/css'>        
+		<link rel="stylesheet" href="/main.css" type="text/css"/>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans&subset=latin' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin' rel='stylesheet' type='text/css'>
+		<script src="/jquery-1.4.4.min.js"></script>
+		<script src="/json.js"></script> <!-- for ie -->
+		<script src="/main.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			/* Init SOCKET.IO connection */
+			var socket = new io.Socket(null, {port: 8080, rememberTransport: false});
+			socket.connect();
+			socket.on('message', function(obj){
+				
+				if ('buffer' in obj){
+					document.getElementById('form').style.display='block';
+					$('#chat').html('');
+			
+					for (var i in obj.buffer) message(obj.buffer[i]);
+				} 
+				else if ('message' in obj){
+					message(obj);
+				}
+				else if ('announcement' in obj){
+					message(obj);
+				}
+				else if ('idea' in obj){
+					suggestion(obj);
+				}
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="shadowbox.css">
+		<script type="text/javascript" src="shadowbox.js"></script>
+		<script type="text/javascript">
+			Shadowbox.init(
+				{ skipSetup: true }
+			);
+		</script>
+	</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="logo">Chatstorm</div>
+			<div id="menu">Brainstorming reinvented...</div>
+			<div style="clear:both;"></div>	
+			<div id="tema"><strong>Theme:</strong> Ideas for Codebits 2011</div>
+		<div>
+		<div style="clear:both;"></div>
+		<div id="content">
+			<!-- chat goes here -->
+			<div id="chatbox">
+			    <div id="chat"><p>Connecting...</p></div>
+			    <form id="form" onsubmit="send(); return false">
+			      <input type="text" autocomplete="off" id="txtIn"><input type="submit" value="Send">
+				<div id="chars_left">
+				<span id="charsLeft">140</span> characters left
+				</div>
+			    </form>
+			</div>
+			<!-- live searches goes here -->
+			<div id="live_searchs">
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<div style="clear:both;"></div>
+</body>
+</html>
