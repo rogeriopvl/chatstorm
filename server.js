@@ -18,7 +18,7 @@ server = http.createServer(function(req, res){
 		res.end();
 	}
 	else if (path == '/chat'){
-		fs.readFile(__dirname + path+'.html', function(err, data){
+		fs.readFile(__dirname +'/public'+path+'.html', function(err, data){
 			if (err) return send404(res);
 			res.writeHead(200, {'Content-Type': 'text/html'})
 			res.write(data, 'utf8');
@@ -28,7 +28,7 @@ server = http.createServer(function(req, res){
 	else if (path.match(/\.js$/)){
 		// get the js files from the js directory
 		// this must be evaluated for potential security issues
-		fs.readFile(__dirname + '/js' + path, function(err, data){
+		fs.readFile(__dirname + '/public/js' + path, function(err, data){
 			if (err) return send404(res);
 			res.writeHead(200, {'Content-Type': 'text/javascript' })
 			res.write(data, 'utf8');
@@ -36,7 +36,7 @@ server = http.createServer(function(req, res){
 		});
 	}
 	else if (path.match(/\.css$/)){
-		fs.readFile(__dirname + '/css' + path, function(err, data){
+		fs.readFile(__dirname + '/public/css' + path, function(err, data){
 			if (err) return send404(res);
 			res.writeHead(200, {'Content-Type': 'text/css' })
 			res.write(data, 'utf8');
@@ -44,7 +44,7 @@ server = http.createServer(function(req, res){
 		});
 	}
 	else if (path.match(/\.(jpg|jpeg|png|gif)$/)){
-		fs.readFile(__dirname + '/imgs' + path, function(err, data){
+		fs.readFile(__dirname + '/public/imgs' + path, function(err, data){
 			if (err) return send404(res);
 			var tmpExt = path.substr(-3);
 			if (tmpExt == 'jpg' || 'jpeg'){
