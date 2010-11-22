@@ -5,16 +5,16 @@ Chatstorm is an online brainstorming web application that uses a real-time chat 
 
 ## Run
 To run Chatstorm you need:
-* Node.js
-* NPN (Node Package Manager)
-* Socket.io
+	* Node.js
+	* NPN (Node Package Manager)
+	* Socket.io
 
 ## Credits
 This project was developed during the [Sapo Codebits][0] programming contest by:
-* [David Cruz][2]
-* [Miguel Marinhas][3]
-* [Pedro Oliveira][4]
-* [Rogério Vicente][5]
+	* [David Cruz][2]
+	* [Miguel Marinhas][3]
+	* [Pedro Oliveira][4]
+	* [Rogério Vicente][5]
 
 The chat code is from [Ryan Dahl][1].
 
