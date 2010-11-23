@@ -8,31 +8,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin' rel='stylesheet' type='text/css'>
 		<script src="/jquery-1.4.4.min.js"></script>
 		<script src="/json.js"></script> <!-- for ie -->
-		<script src="/main.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
-		<script>
-			/* Init SOCKET.IO connection */
-			var socket = new io.Socket(null, {port: 8080, rememberTransport: false});
-			socket.connect();
-			socket.on('message', function(obj){
-				
-				if ('buffer' in obj){
-					document.getElementById('form').style.display='block';
-					$('#chat').html('');
-			
-					for (var i in obj.buffer) message(obj.buffer[i]);
-				} 
-				else if ('message' in obj){
-					message(obj);
-				}
-				else if ('announcement' in obj){
-					message(obj);
-				}
-				else if ('idea' in obj){
-					suggestion(obj);
-				}
-			});
-		</script>
+		<script src="/main.js"></script>
 		<link rel="stylesheet" type="text/css" href="shadowbox.css">
 		<script type="text/javascript" src="shadowbox.js"></script>
 		<script type="text/javascript">
