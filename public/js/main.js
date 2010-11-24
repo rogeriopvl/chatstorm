@@ -41,7 +41,7 @@ function suggestion(obj){
 			//exemplo acesso video
 			var thumbURL = obj.idea[0]['media:content'].url;
 			var movURL = obj.idea[0].link+'/mov/1';
-			if ('idea' in obj && messageValue != undefined){
+			if ('idea' in obj && thumbURL != undefined){
 				$('#live_searchs').prepend('<div class="boxes"><div id="details">Source: Sapo Videos - Like | Unlike | Preview</div><div class="boxes_content_img"><a rel="shadowbox" href="'+ movURL +'"><img src="'+ thumbURL +'"/></a></div></div>');
 			}
 			Shadowbox.setup();
