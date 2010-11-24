@@ -39,10 +39,10 @@ function suggestion(obj){
 		}
 		else if (type == "video"){
 			//exemplo acesso video
-			var messageValue = obj.idea[0]['media:content'].url;
-			var maxSizeVideo = obj.idea[0]['media:content'].url;
+			var thumbURL = obj.idea[0]['media:content'].url;
+			var movURL = obj.idea[0].link+'/mov/1';
 			if ('idea' in obj && messageValue != undefined){
-				$('#live_searchs').prepend('<div class="boxes"><div id="details">Source: Sapo Videos - Like | Unlike | Preview</div><div class="boxes_content_img"><a rel="shadowbox" href="'+ maxSizeVideo +'"><img src="'+ messageValue +'"/></a></div></div>');
+				$('#live_searchs').prepend('<div class="boxes"><div id="details">Source: Sapo Videos - Like | Unlike | Preview</div><div class="boxes_content_img"><a rel="shadowbox" href="'+ movURL +'"><img src="'+ thumbURL +'"/></a></div></div>');
 			}
 			Shadowbox.setup();
 		}
