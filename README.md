@@ -3,6 +3,9 @@
 ## About
 Chatstorm is an online brainstorming web application that uses a real-time chat to share ideas and automatically fetch and suggest web-content relate with those ideas. Technically speaking it was developed in Node.js (Server-side Javascript) and WebSockets (Client-side).
 
+### Screenshot
+![Chatstorm running](http://farm2.static.flickr.com/1327/5180366456_3eb5d590cb_b.jpg)
+
 ## Run
 To run Chatstorm you need:
 
