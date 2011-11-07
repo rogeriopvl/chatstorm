@@ -91,16 +91,16 @@ server.listen(8080, {
 var io = io.listen(server),
 		buffer = [];
 		
-io.on('connection', function(client){
-	client.send({ buffer: buffer });
-	client.broadcast({ announcement: client.sessionId + ' connected' });
+io.sockets.on('connection', function(client){
+	client.json.send({ buffer: buffer });
+	client.json.broadcast.send({ announcement: client.sessionId + ' connected' });
 
 	client.on('message', function(message){
 
 		var msg = { message: [client.sessionId, message] };
 		buffer.push(msg);
 		if (buffer.length > 15) buffer.shift();
-		client.broadcast(msg);
+		client.json.broadcast.send(msg);
 			
 		sys.puts("txt to search: " + message);	
 		if (message){
@@ -126,11 +126,11 @@ io.on('connection', function(client){
 	});
 
 	client.on('disconnect', function(){
-		client.broadcast({ announcement: client.sessionId + ' disconnected' });
+		client.json.broadcast.send({ announcement: client.sessionId + ' disconnected' });
 	});
 	
 	client.on('draw', function(){
-		client.broadcast({ announcement: client.sessionId + ' drawn something' });
+		client.json.broadcast.send({ announcement: client.sessionId + ' drawn something' });
 	});
 	
 });

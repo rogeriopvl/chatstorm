@@ -112,10 +112,8 @@ function postIdea(idea,owner){
 }
 
 /* Init SOCKET.IO connection */
-var socket = new io.Socket(null, {port: 8080, rememberTransport: false});
-socket.connect();
+var socket = io.connect('http://localhost:8080');
 socket.on('message', function(obj){
-	
 	if ('buffer' in obj){
 		document.getElementById('form').style.display='block';
 		$('#chat').html('');
